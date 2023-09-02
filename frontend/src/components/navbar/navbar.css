@@ -1,0 +1,109 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position:fixed;
+    padding: 1rem;
+    background-color: white;
+
+}
+
+.navbar-link{
+    position: relative;
+    margin: 0 1rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: var(--font-family);
+}
+
+.navbar-link:hover{
+    color: #166aea;
+}
+
+.navbar-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-logo{
+    font-family: var(--font-logo);
+    margin: 0 3rem 0 1rem;
+    color: blue;
+    font-size: 2rem;
+}
+
+.navbar-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-loggedin , .navbar-loggedout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-createBlog{
+    padding: 12px 24px;
+    border-radius: 24px;
+    background-color:#166aea;
+    color:rgb(255, 255, 255);
+    font-family: var(--font-family);
+    font-weight: 550;
+    font-size:medium;
+    letter-spacing: 1px;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+
+
+.getStarted-btn{
+    padding: 12px 24px;
+    border-radius: 24px;
+    background-color:#166aea;
+    color:rgb(255, 255, 255);
+    font-family: var(--font-family);
+    font-weight: 550;
+    font-size:medium;
+    letter-spacing: 1px;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+
+.getStarted-btn:hover{
+    background-color: #327ceb;
+}
+
+
+
+.navbar-logout-btn{
+    position: relative;
+    margin: 0 1rem;
+    padding-right: 1rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: var(--font-family);
+    border: none;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:550px){
+    .navbar{
+        position: relative;
+        flex-direction: column;
+    }
+    .navbar-left-links{
+        visibility: collapse;
+    }
+}

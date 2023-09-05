@@ -1,43 +1,26 @@
 import './blogs.css'
+import likeIcon from '../../assets/icons8-heart-48.png'
+import { Link } from 'react-router-dom'
 
-import blogService from '../../services/blogs'
-import Blog from './Blog'
-
-const Blogs = ({blogs,setBlogs}) => {
-
-  const modifyLikes = async (newBlog) =>{
-    try{
-      const returnedBlog = await blogService.update(newBlog)
-      setBlogs(blogs.map(blog => blog.id !== newBlog.id?blog:returnedBlog))
-      // setNotification(`You Liked This Blog`)
-      // setTimeout(() => {setNotification('')}, 5000)
-    }
-    catch{
-      alert('Some Error Occur!')
-      // setNotification(`Some Error Occur!`)
-      // setTimeout(() => {setNotification('')}, 5000)
-    }
-  }
-
-  const deleteBlog = async (id)=>{
-    try{
-      const ans = window.confirm('are you sure you want to delete the blog')
-      if(ans){
-      await blogService.del(id)
-      setBlogs(blogs.filter(blog=> blog.id!=id))
-      }
-    }
-    catch{
-      alert('Some Error Occur! in delte frontend')
-      // setNotification(`Some Error Occur! in delte frontend`)
-      // setTimeout(() => {setNotification('')}, 5000)
-    }
-  }
-
+const Blogs = ({ blogs}) => {
   return (
-    <div className='blogs'>
-      {blogs.map(blog => <Blog key={blog.id} id={blog.id} blog={blog} modifyLikes={modifyLikes} deleteBlog={deleteBlog} />)}
-    </div>
+      <div className='blogs'>
+        {blogs.map(blog =>
+          <div key={blog.id} className="blogCard">
+            <div className="blogCard-header">
+              <div className="blogCard-heading">
+                <h1>{blog.title}</h1>
+                <p>by {blog.author}</p>
+              </div>
+              <div className="blogCard-likes">
+                Likes: {blog.likes}
+                <img src={likeIcon}></img>
+              </div>
+            </div>
+            <Link to={`/blogs/${blog.id}`} className="readNow-btn">Read Now</Link>
+          </div>
+        )}
+      </div>
   )
 }
 

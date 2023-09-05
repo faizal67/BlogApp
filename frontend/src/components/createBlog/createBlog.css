@@ -1,5 +1,84 @@
 .createBlog{
-    padding-top: 5rem;
+    padding-top: 7rem;
     height: 100vh;
-    background-color: lightpink;
+    /* background-color: lightpink; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: aliceblue;
 }
+
+.createBlog-heading{
+    font-family: var(--font-family);
+}
+
+.createBlog-form{
+    background-color: white;
+    margin: 2rem 0;
+    width: 50%;
+    padding: 2rem 2rem;
+    border-radius: 5px;
+}
+
+.inputField-title-label, .inputField-content-label{
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    color: rgb(92, 104, 109);
+    font-size: 17px;
+    line-height: 15px;
+}
+
+.inputField-title-input{
+    font-family: var(--font-family);
+    border: 2px solid rgb(216, 240, 244);
+    width: 100%;
+
+}
+
+.inputField-content-input{
+    font-family: var(--font-family);
+    width: 100%;
+    border: 2px solid rgb(216, 240, 244);
+    font-size: 17px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+
+}
+
+.createBlog-btn{
+    padding: 1rem 2.5rem;
+    float: right;
+    background-color: #3d7fd6;
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.createBlog-btn:hover{
+    background-color: #6091d2;
+}
+
+
+/* input:active{
+    border: 2px solid;
+    border-color:#3d7fd6;
+  } */
+  input:hover{
+    border: 2px solid;
+    border-color: #3d7fd6;
+  }
+  textarea:hover{
+    border: 2px solid;
+    border-color: #3d7fd6;
+  }
+
+
+

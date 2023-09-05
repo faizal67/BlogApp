@@ -8,6 +8,7 @@ import SignUp from '../signup/SignUp'
 import Login from '../login/Login'
 import Blogs from '../blogs/Blogs'
 import CreateBlog from '../createBlog/CreateBlog'
+import Blog from '../blogs/Blog'
 
 const Users = () => {
   return (
@@ -42,19 +43,35 @@ const Navbar = () => {
   return (
     <Router>
       <div className='navbar'>
-        <div className='navbar-left'>
+        {/* <div className='mobile'>
           <h4 className='navbar-logo'>Blogr</h4>
+          {user ? <Link className='navbar-createBlog-btn' to="/createBlog">Create Blog</Link>:<></>}
           {toggleMenu
-            ? <RiCloseLine color='#fff' size={27} onClick={() => setToggleMenu(false)} />
-            : <RiMenu3Line color='#fff' size={27} onClick={() => setToggleMenu(true)} />
+            ? <RiCloseLine color='black' size={27} onClick={() => setToggleMenu(false)} />
+            : <RiMenu3Line color='black' size={27} onClick={() => setToggleMenu(true)} />
           }
           {toggleMenu && (
-            <div className='scale-up-center di'>
-          <Link className='navbar-link' to="/">Home</Link>
-          <Link className='navbar-link' to="/blogs">Blogs</Link>
-          <Link className='navbar-link' to="/">Support</Link>
-          </div>
+            <div className='mobile-nav-container'>
+              <Link className='navbar-link' to="/">Home</Link>
+              <Link className='navbar-link' to="/blogs">Blogs</Link>
+              <Link className='navbar-link' to="/">Support</Link>
+                {user
+                  ? <div className='navbar-loggedin'>
+                    
+                    <button className='navbar-logout-btn' onClick={logoutHandler}>Log out</button>
+                  </div>
+                  : <div className='navbar-loggedout'>
+                    <Link className='navbar-link' to="/login">Log in</Link>
+                    <Link className='getStarted-btn' to="/signup">Get Started</Link>
+                  </div>
+                }
+            </div>
+
           )}
+        </div> */}
+
+        <div className='navbar-left'>
+          <h4 className='navbar-logo'>Blogr</h4>
           <div className='navbar-left-links'>
           <Link className='navbar-link' to="/">Home</Link>
           <Link className='navbar-link' to="/blogs">Blogs</Link>
@@ -64,8 +81,8 @@ const Navbar = () => {
         <div className='navbar-right'>
           {user
             ? <div className='navbar-loggedin'>
-              <Link className='navbar-createBlog' to="/createBlog">Create Blog</Link>
-              <p>{user} logged in</p>
+              <Link className='navbar-createBlog-btn' to="/createBlog">Create Blog</Link>
+              <p>Welcome {user}</p>
               <button className='navbar-logout-btn' onClick={logoutHandler}>Log out</button>
             </div>
             : <div className='navbar-loggedout'>
@@ -81,9 +98,10 @@ const Navbar = () => {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login setloginUser={setUser} />} />
-        <Route path="/blogs" element={<Blogs blogs={blogs} setBlogs={setBlogs} />} />
+        <Route path="/blogs" element={<Blogs blogs={blogs}/>} />
         <Route path="/createBlog" element={<CreateBlog blogs={blogs} setBlogs={setBlogs} />} />
         <Route path="/users" element={<Users />} />
+        <Route path='/blogs/:id' element={<Blog blogs={blogs} setBlogs={setBlogs} user={user}></Blog>}></Route>
       </Routes>
 
     </Router>

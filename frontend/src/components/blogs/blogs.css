@@ -1,5 +1,85 @@
 .blogs{
-    padding-top: 5rem;
+    padding: 5rem 0;
     height: 100vh;
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.blogCard{
+    padding: 2.5rem 0;
+    margin: 2rem 5rem;
+    border-radius: 8px;
+    width: 65vw;
+    background-color: rgb(37, 47, 156);
+    transition: 0.4s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blogCard:hover{
+    transform: scale(1.03,1.03);
+}
+
+.blogCard-header{
+    flex: 1;
+}
+
+.blogCard-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.blogCard-heading h1{
+ 
+    font-family: var(--font-family);
+    padding-left: 1rem;
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    text-transform: capitalize;
+    display: inline;
+}
+
+.blogCard-heading p{
+    padding-bottom: 2px;
+    margin-left: 1rem;
+    display: block;
+    font-style: italic ;
+    color: white;
+}
+
+.blogCard-likes{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    color: white;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+}
+
+.blogCard-likes img{
+    height: 20px;
+    margin-left: 4px;
+}
+
+
+.readNow-btn{
+    background-color: rgb(255, 255, 255);
+    margin-right: 2rem;
+    margin-left: 1rem;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    text-decoration: none;
+    color: black;
+    width: 5.5rem;
+}
+
+.readNow-btn:hover{
+    background-color: rgb(198, 198, 198);
+}
+

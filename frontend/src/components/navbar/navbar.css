@@ -7,6 +7,7 @@
     position:fixed;
     padding: 1rem;
     background-color: white;
+    z-index: 5;
 
 }
 
@@ -51,7 +52,7 @@
     justify-content: center;
 }
 
-.navbar-createBlog{
+.navbar-createBlog-btn{
     padding: 12px 24px;
     border-radius: 24px;
     background-color:#166aea;
@@ -62,6 +63,10 @@
     letter-spacing: 1px;
     margin-right: 2rem;
     text-decoration: none;
+}
+
+.navbar-loggedin p{
+    font-family: var(--font-family);
 }
 
 
@@ -78,32 +83,54 @@
     text-decoration: none;
 }
 
-.getStarted-btn:hover{
+
+
+.getStarted-btn:hover ,.navbar-createBlog:hover{
     background-color: #327ceb;
 }
 
 
 
 .navbar-logout-btn{
-    position: relative;
-    margin: 0 1rem;
-    padding-right: 1rem;
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    font-size: 15px;
-    font-family: var(--font-family);
     border: none;
+    background-color: white;
+    color: #166aea;
+    padding: 0 2rem;
+    font-weight: 550;
+    font-size:medium;
     cursor: pointer;
 }
 
+.mobile{
+    display: none;
+}
+
+.mobile-nav-container{
+    display:flex;
+    flex-direction: column;
+    border: 1px solid black;
+    position:absolute;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
 
 @media screen and (max-width:550px){
+    .mobile{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
     .navbar{
         position: relative;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
     }
     .navbar-left-links{
-        visibility: collapse;
+        display: none;
+    }
+    .navbar-right{
+        display: none;
     }
 }

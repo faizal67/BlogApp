@@ -1,0 +1,113 @@
+.blog{
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.blog-heading{
+    margin: 2rem 0;
+    text-transform: capitalize;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blog-heading h1{
+    font-size: 2.125rem;
+    width: 55rem;
+    text-align: center;
+}
+.vl{
+    height: 1rem;
+    border-left: 1px solid black;
+    margin: 0 1rem;
+}
+
+.hl{
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgb(145, 145, 145);
+    margin: 1rem 0;
+}
+.blog-heading p{
+    margin-top: 0.3rem;
+}
+
+.blog-content{
+    font-family: var(--font-family);
+    line-height: 2rem;
+    font-size: 20px;
+    width: 55rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.blog-content p{
+    padding-top: 1rem;
+}
+
+.blog-content-footer{
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content: flex-start;
+}
+
+.blog-likes{
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+#heart:hover{
+    transform: scale(1.1);
+}
+  
+#heart{ 
+    position: relative; 
+    width: 30px; 
+    height: 25px; 
+    transition: 0.3s ease-in-out;
+    margin-left: 0.5rem; 
+    cursor: pointer;
+} 
+
+#heart-first, #heart-second{
+    position: absolute;
+    left: 16px; 
+    top: 0; 
+    width: 15px; 
+    height: 24px; 
+    border-radius: 50px 50px 0 0; 
+    background: rgb(249, 96, 96); 
+    transform: rotate(-46deg); 
+    transform-origin: 0 100%; 
+}
+
+#heart-second{
+    left: 0; 
+    transform: rotate(46deg); 
+    transform-origin :100% 100%; 
+}
+
+.blog-footer-btn{
+    padding: 1rem 2rem;
+    background-color: aliceblue;
+}
+
+.blog-footer-action{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.remove{
+    color: red;
+}
